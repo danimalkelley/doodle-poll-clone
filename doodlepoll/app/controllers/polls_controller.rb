@@ -14,5 +14,11 @@ class PollsController < ApplicationController
     render :new
   end
 
+  def create
+    @poll = Poll.new(params[:poll])
+    @poll.save
+    redirect_to action: 'show', id: @poll.id
+  end
+
 
 end

@@ -55,5 +55,23 @@ RSpec.describe PollsController, :type => :controller do
     end
   end
 
+  describe "POST create" do
+    it "returns a good status" do
+      post :create, name: "Charles"
+      expect(response.status).to be(302)
+    end
+
+    it "adds a record to database" do
+      expect{
+        post :create, name: "Charles"
+        }.to change{Poll.count}.by(1)
+    end
+
+    it "redirects to show page of created varaiable" do
+      post :create, name: "Charles"
+      expect(response).to redirect_to(action: :show, id: assigns(:poll).id )
+    end
+  end
+
 
 end

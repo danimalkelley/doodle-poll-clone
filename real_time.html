@@ -1,0 +1,41 @@
+<html>
+<head>
+  <title></title>
+  <script src="https://code.jquery.com/jquery-2.1.3.js"></script>
+</head>
+<body>
+
+  <form>
+    <input type="text" class="secretSauce">
+  </form>
+
+  <ul id="suggestions">
+
+  </ul>
+
+  <script type="text/javascript">
+    console.log('hi')
+    // $('input').change(function(){
+    //   console.log('registered a change')
+    // }
+    $( ".secretSauce" ).on('keyup', function() {
+      console.log('registered a change')
+    }
+      // var data = $(secretSauce).value()
+      // $.ajax({
+      //   url: '/margaritaville',
+      //   type: 'get',
+      //   data: data,
+      //   dataType: 'JSON'
+      // }).done(function(data){
+      //   for(var i=0; i<data.length; i++){
+      //     $("#suggestions").append("<li>" + data[i] + "</li>");
+      //   }
+      // }).fail(function(){
+      //   console.log('you fucked up')
+      // })
+    )
+  </script>
+
+</body>
+</html>
